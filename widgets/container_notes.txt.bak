@@ -1,0 +1,134 @@
+
+1)
+import 'package:flutter/material.dart';
+
+
+class Home extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Text('Boring'),
+      color: Colors.blue, // background color of child widget
+    );
+  }
+
+}
+
+
+------------------------------------------------------------------------------
+2) 
+
+import 'package:flutter/material.dart';
+
+class Home extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Text('Less Boring'),
+      color: Colors.blue, // background color of child widget
+      padding:EdgeInsets.all(20.0),
+    );
+  }
+
+}
+
+---------------------------------------------------------------------------------
+3)
+import 'package:flutter/material.dart';
+
+class Home extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Text('Less Boring'),
+      color: Colors.blue, // background color of child widget
+      padding:EdgeInsets.all(20.0),
+      margin: EdgeInsets.all(20.0),
+    );
+  }
+
+}
+----------------------------------------------------------------------------------
+4) 
+
+import 'package:flutter/material.dart';
+
+class Home extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Text('Less Boring'),
+      // color: Colors.blue, // background color of child widget
+      // padding:EdgeInsets.all(20.0),
+      // margin: EdgeInsets.all(20.0),
+      decoration: BoxDecoration(
+        shape:BoxShape.circle,
+        color: Colors.blue,
+      ),
+    );
+  }
+
+}
+
+------------------------------------------------------------------------------------
+5) 
+import 'package:flutter/material.dart';
+
+class Home extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Text('Less Boring'),
+      color: Colors.blue, // background color of child widget
+      // padding:EdgeInsets.all(20.0),
+      // margin: EdgeInsets.all(20.0),
+      // decoration: BoxDecoration(
+      //   shape:BoxShape.circle,
+      //   color: Colors.blue,
+      // ),
+      // margin: EdgeInsets.all(25.0),
+      // padding: EdgeInsets.all(40.0),
+    );
+  }
+
+}
+------------------------------------------------------------------------------------
+6) 
+import 'package:flutter/material.dart';
+
+class Home extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Text('Less Boring'),
+      color: Colors.blue, // background color of child widget
+      alignment: Alignment.center,
+      // padding:EdgeInsets.all(20.0),
+      // margin: EdgeInsets.all(20.0),
+      // decoration: BoxDecoration(
+      //   shape:BoxShape.circle,
+      //   color: Colors.blue,
+      // ),
+      // margin: EdgeInsets.all(25.0),
+      // padding: EdgeInsets.all(40.0),
+    );
+  }
+
+}
+-------------------------------------------------------------------------------------
+7)
+
+
+
