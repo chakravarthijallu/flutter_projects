@@ -1,61 +1,211 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget
-{
+class Home extends StatelessWidget {
+  final Color tintColor = Colors.blue;
+  Widget rowWidget = Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      Column(
+        children: [
+          Icon(
+            Icons.home,
+            color: Colors.blue,
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 5.0),
+            child: Text(
+              "Home",
+              style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blue),
+            ),
+          )
+        ],
+      ),
+      Column(
+        children: [
+          Icon(
+            Icons.arrow_back,
+            color: Colors.blue,
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 5.0),
+            child: Text(
+              "Back",
+              style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blue),
+            ),
+          )
+        ],
+      ),
+      Column(
+        children: [
+          Icon(
+            Icons.arrow_forward,
+            color: Colors.blue,
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 5.0),
+            child: Text(
+              "Next",
+              style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blue),
+            ),
+          )
+        ],
+      ),
+      Column(
+        children: [
+          Icon(
+            Icons.share,
+            color: Colors.blue,
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 5.0),
+            child: Text(
+              "Share",
+              style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blue),
+            ),
+          )
+        ],
+      ),
+    ],
+  );
+  Widget bottomTextSection = Container(
+    padding: EdgeInsets.all(15.0),
+    child: Text(
+      "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+      style: TextStyle(
+        color: Colors.grey[850],
+        fontSize: 16.0,
+      ),
+    ),
+  );
+  Widget titleSection = new Column(
+    children: [
+      Container(
+        padding: EdgeInsets.only(left: 20.0),
+        child: Text(
+          "Programming Tutorials Channel",
+          textAlign: TextAlign.start,
+          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+        alignment: Alignment.topLeft,
+      ),
+      Container(
+        padding: EdgeInsets.all(15.0),
+        child: Text(
+          "The Channel contains tutorial videos in 1000 likes flutter. react Native,React,Angular",
+          style: TextStyle(fontSize: 16.0),
+        ),
+      ),
+    ],
+  );
+  Widget topImage = Image.asset(
+    'images/first_image.jpg',
+    fit: BoxFit.cover,
+  );
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
+          onPressed: null,
+          child: Icon(Icons.add),
+        ),
+        appBar: AppBar(
+          title: Text("Project6"),
+        ),
+        body: Container(
+          alignment: Alignment.topCenter,
+          child: Column(
+            children: [
+              topImage,
+              titleSection,
+              rowWidget,
+              bottomTextSection,
+              SaveButton()
+            ],
+          ),
+        ));
+  }
+}
+
+class SaveButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: RaisedButton(
+        color: Colors.deepOrange,
+        child: Text("Save Content"),
+        elevation: 6.0,
         onPressed: null,
-        child: Icon(Icons.add),
       ),
-      appBar: AppBar(
-        title: Text("Project6"),
-      ),
-      body:Container(
-        alignment: Alignment.topCenter,
-        child:Row(
-          children: [
-            Expanded(child:Text(
-              "Flutter"
-              ,style: TextStyle(
-                fontSize: 20.0
-            ),
-            ), ),
-            Expanded(child: Text("React"
-              ,style: TextStyle(
-                  fontSize: 20.0
-              ),),
-            ),
-            Expanded(child: Text("Flask"
-              ,style: TextStyle(
-                  fontSize: 20.0
-              ),),),
-            Expanded(child: Text("Django"
-              ,style: TextStyle(
-                  fontSize: 20.0
-              ),),),
-            Expanded(child: Text("Node"
-              ,style: TextStyle(
-                  fontSize: 20.0
-              ),),),
-            // Expanded(child: Text(
-            //   "Hibernate",style:
-            // TextStyle(
-            //     fontSize: 20.0
-            // ),
-            // ),)
-          ],
-        )
-
-
-      )
-
     );
   }
-
 }
+
+// Widget buttonIcon(IconData icon,String buttonTitle)
+// {
+//   final Color tintColor = Colors.blue;
+//   return Column(
+//     children: [
+//       Icon(icon,color: tintColor,),
+//       Container(
+//         margin:const EdgeInsets.only(top:5.0),
+//         child: Text(buttonTitle,style:TextStyle(
+//             fontSize: 16.0,
+//             fontWeight: FontWeight.w600,color: tintColor
+//         ) ,),
+//       )
+//     ],
+//   );
+// }
+
+// Row(
+// children: [
+//
+// // Expanded(child:Text(
+// //   "Flutter"
+// //   ,style: TextStyle(
+// //     fontSize: 20.0
+// // ),
+// // ), ),
+// // Expanded(child: Text("React"
+// //   ,style: TextStyle(
+// //       fontSize: 20.0
+// //   ),),
+// // ),
+// // Expanded(child: Text("Flask"
+// //   ,style: TextStyle(
+// //       fontSize: 20.0
+// //   ),),),
+// // Expanded(child: Text("Django"
+// //   ,style: TextStyle(
+// //       fontSize: 20.0
+// //   ),),),
+// // Expanded(child: Text("Node"
+// //   ,style: TextStyle(
+// //       fontSize: 20.0
+// //   ),),),
+// // Expanded(child: Text(
+// //   "Hibernate",style:
+// // TextStyle(
+// //     fontSize: 20.0
+// // ),
+// // ),)
+// ],
+// )
+
 // Column(
 // children: [
 //
@@ -90,7 +240,6 @@ class Home extends StatelessWidget
 // ),)
 // ],
 // )
-
 
 // Row(
 // children: [
@@ -132,8 +281,6 @@ class Home extends StatelessWidget
 // ]
 // ),
 // )
-
-
 
 // Text("Hello World is my project06",
 // textDirection: TextDirection.rtl,
