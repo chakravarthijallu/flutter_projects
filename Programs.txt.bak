@@ -1,0 +1,238 @@
+Flutter Table widget
+--------------------
+Table(
+columnWidths: {1:FractionColumnWidth(.2)},
+border:TableBorder.all(),
+children:[
+TableRow(children: [
+WideWidget(),
+MediumWidget(),
+MediumWidget(),
+]),
+TableRow(children: [
+MediumWidget(),
+NarrowWidget(),
+MediumWidget(),
+]),
+],
+defaultVerticalAlignment:TableCellVerticalAlignment.middle|bottom,
+defaultColumnWidth: FlexColumnWidth(1.0)|FractionColumnWidth(.25)|IntrinsicColumnWidth(),
+
+);
+
+--------------------------------------------------------------------------------------------------------------------
+1)
+
+Table(
+children:[
+TableRow(
+children:[
+Container(height: 100, color:Colors.red),
+Container(height:100,color:Colors.green),
+Container(height:100,color:Colors.yellow),
+Container(height:100,color:Colors.purple),
+// Row can be evenly spreaded
+],
+),//TableRow
+TableRow(
+children: [
+Container(height: 100,color:Colors.green),
+Container(height: 100,color:Colors.red),
+Container(height: 100,color:Colors.brown),
+Container(height: 100,color:Colors.yellow),
+]
+),
+],
+);
+-------------------------------------------------------------------------
+2) 
+Table(
+border: TableBorder.all(),
+columnWidths:{
+1:FlexColumnWidth(1.5),
+2:FlexColumnWidth(0.3)
+
+},
+children: [
+TableRow(
+children:[
+Text("Name",style:TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+Text("SurName",style:TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+Text("Age",style:TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+],
+),
+TableRow(
+children:[
+Text("chip",style:TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+Text("Coding",style:TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+Text("33",style:TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+],
+),
+],
+);
+
+--------------------------------------------------------------------------------
+List View in Flutter:
+---------------------
+
+void main()
+{
+runApp(
+MaterialApp(
+title:"Exploring UI Widgets",
+home:
+SafeArea(
+child:Scaffold(
+appBar:AppBar(title:Text("Basic List View"),)
+body: getListView(),
+)
+)
+)
+);
+}
+
+Widget getListView()
+{
+var listView = ListView(
+children: [
+ListTile(
+leading: Icon(Icons.landscape),
+title: Text("Landscape"),
+subtitle:Text("Beautiful View!"),
+trailing : Icon(Icons.wb_sunny)
+),
+ListTile(
+leading: Icon(Icons.landscape),
+title: Text("Windows"),
+subtitle:Text("Beautiful View!"),
+trailing : Icon(Icons.wb_sunny)
+),
+ListTile(
+leading: Icon(Icons.landscape),
+title: Text("Phone"),
+subtitle:Text("Beautiful View!"),
+trailing : Icon(Icons.wb_sunny),
+onTap:(){
+debugPrint("Phone tapped");
+}
+),
+
+Text("Yet whether app is more"),
+]
+);
+}
+
+------------------------------------------------------------------------
+Long Lists in Flutter:
+----------------------
+1) Prepare the Data Source
+2) Convert Data Source into Widgets
+3) Use Widgets as children of a ListView
+
+Program:
+--------
+Void main()
+{
+runApp(
+MaterialApp(
+title:"Exploring UI Widgets",
+home:SafeArea(
+child: Scaffold(
+appBar: AppBar(title: Text("Long List"),),
+body: getListView()
+)
+),
+));
+}
+
+List<String> getListElement()
+{
+var items = List<String>.generate(1000,(counter) => "Item ${counter}");
+return items;
+}
+
+Widget getListView()
+{
+var listItems = getListElement();
+
+var listView = ListView.builder(
+itemBuilder:(context,index)
+{
+return ListTile(
+leading:Icon(Icons.arrow_forward),
+title: Text(listItems[index]),
+onTap:(){
+debugPrint("${listItems[index] } was tapped");}
+);
+}
+);
+return listView;
+}
+
+---------------------------------------------------------------------------------
+Floating Action Button and Snack Bar
+-------------------------------------
+SnackBar:
+----------
+import 'package:flutter/material.dart';
+
+class getFloatingBar extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Floating SnackBar"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+	  import 'package:flutter/material.dart';
+
+class getFloatingBar extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Floating SnackBar"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+	  showSnackBar(context)
+          },
+          child: Icon(Icons.add),
+          tooltip: 'Add One More Item',
+        ),
+
+      ),
+    );
+  }
+}
+          },
+          child: Icon(Icons.add),
+          tooltip: 'Add One More Item',
+        ),
+
+      ),
+    );
+  }
+}
+
+void showSnackBar(BuildContext context)
+{
+
+var snackBar = SnackBar(
+content: Text("FAB is Clicked")
+);
+
+Scaffold.of(context).showSnackBar(snackBar);
+
+}
+-----------------------------------------------------------------------------------
+06 - 01 - 2021
+--------------
+Topics:- Buttons , Alert Dialog , ListView , ListView.builder,
+         Tables , SnackBar , Statefullwidget , GridView ,  
+
